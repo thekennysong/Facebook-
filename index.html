@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <script src="handlebars.js"></script>
+   <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="facebook-graph.js"></script>
+
+</head>
+
+<body>
+    <form id="search">
+        <input type="text" id="searchGroup" placeholder="Name" />
+        <input type="submit" value="Search for Facebook Group">
+    </form>
+    <div id="results"></div>
+</body>
+
+<script id="page-template" type="text/handlebars-template">
+    <h2>Name: {{name}}</h2>
+    <img src="{{cover.source}}">
+    <div>{{{description}}}</div>
+    <p>Phone Number:{{phone}}</p>
+</script>
+
+</html>
