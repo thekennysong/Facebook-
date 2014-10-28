@@ -1,10 +1,10 @@
-var FacebookSearch = {
-  renderPage: function(data) {
-    var html = FacebookSearch.setTemplate(data);
+var Search = {
+  makeP: function(data) {
+    var html = Search.designate(data);
     $("#results").html(html);
   },
 
-  setTemplate: function(data) {
+  designate: function(data) {
 
     var facebookTemplateFunction = Handlebars.compile($('#page-template').html());
     return facebookTemplateFunction(data);
@@ -15,13 +15,13 @@ jQuery(function(){
   $('#search').submit(function(e) {
     e.preventDefault();
 
-    var searchTerm = $('#searchGroup').val();
+    var word = $('#searchGroup').val();
 
     $.ajax({
-        url: "fb.php?search="+searchTerm,
+        url: "fb.php?search="+word,
         dataType: 'json',
         success: function(data) {
-          FacebookSearch.renderPage(data);
+            Search.makeP(data);
         }
     });
 
