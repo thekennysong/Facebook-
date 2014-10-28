@@ -18,7 +18,7 @@ jQuery(function(){
     var word = $('#searchGroup').val();
 
     $.ajax({
-        url: "fb.php?search="+word,
+        url: "fb.php?search="+ word,
         dataType: 'json',
         success: function(data) {
             Search.makeP(data);
